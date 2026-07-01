@@ -99,4 +99,29 @@
     <string name="instructions_body_ur">ویڈیو کالز صرف اس صورت میں کی اجازت دی جائے گی جب آپ کا رجسٹرڈ موبائل نمبر قیدی کے پروفائل میں پہلے سے موجود ہو۔ اگر آپ کا نمبر قیدی کے پروفائل میں رجسٹرڈ نہیں ہے تو کال کی اجازت نہیں دی جائے گی۔</string>
     <string name="continue_button">Continue / جاری رکھیں</string>
     <string name="read_carefully">Please read carefully before proceeding</string>
+
+    <!-- Add prisoner / SIP account -->
+    <string name="add_prisoner_title">Add Prisoner Information</string>
+    <string name="add_prisoner_title_ur">قیدی کی معلومات شامل کریں</string>
+    <string name="label_jail">Select Jail / Prison</string>
+    <string name="label_jail_ur">جیل منتخب کریں</string>
+    <string name="label_username">Username (Phone Number)</string>
+    <string name="label_username_ur">صارف نام (فون نمبر)</string>
+    <string name="hint_username">Enter phone number</string>
+    <string name="label_password">Password</string>
+    <string name="label_password_ur">پاس ورڈ</string>
+    <string name="label_display_name">Display Name (optional)</string>
+    <string name="label_display_name_ur">ڈسپلے نام (اختیاری)</string>
+    <string name="hint_display_name">Enter your name</string>
+    <string name="label_photos">Take 3 photos</string>
+    <string name="label_photos_ur">تین تصاویر لیں</string>
+    <string name="photo_slot">Photo %1$d</string>
+    <string name="login_fetch_en">Login</string>
+    <string name="login_fetch_ur">لاگ اِن</string>
+    <string name="select_jail_hint">---- Select Jail ----</string>
+    <string name="loading_jails">Loading jails…</string>
+    <string name="err_select_jail">Please select a jail</string>
+    <string name="err_username">Please enter your phone number</string>
+    <string name="err_photos">Please take all 3 photos</string>
+    <string name="transport_udp">UDP</string>
 </resources>

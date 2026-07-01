@@ -74,7 +74,7 @@ class SipForegroundService : Service(), LinphoneManager.Listener {
         if (prefs.isRegistered) {
             val sipId = prefs.sipId!!
             val password = prefs.password!!
-            val domain = prefs.domain ?: Config.SIP_DOMAIN
+            val domain = prefs.domain ?: Config.sipDomain
             linphone.register(sipId, password, domain)
             Log.i(TAG, "SIP service re-registered as $sipId@$domain")
         } else {

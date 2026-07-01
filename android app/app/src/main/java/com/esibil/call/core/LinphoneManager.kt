@@ -79,7 +79,7 @@ class LinphoneManager private constructor(context: Context) {
      * Registers [sipId] against the hardcoded [Config] SIP server using the
      * provisioned [password]. Any previous account is cleared first.
      */
-    fun register(sipId: String, password: String, domain: String = Config.SIP_DOMAIN) {
+    fun register(sipId: String, password: String, domain: String = Config.sipDomain) {
         clearAccounts()
 
         val authInfo: AuthInfo = Factory.instance().createAuthInfo(
@@ -97,7 +97,7 @@ class LinphoneManager private constructor(context: Context) {
         val identity: Address? = Factory.instance().createAddress("sip:$sipId@$domain")
         identity?.let { params.identityAddress = it }
 
-        val proxy: Address? = Factory.instance().createAddress(Config.SIP_PROXY)
+        val proxy: Address? = Factory.instance().createAddress(Config.sipProxy)
         proxy?.transport = when (Config.SIP_TRANSPORT) {
             Config.Transport.Udp -> TransportType.Udp
             Config.Transport.Tcp -> TransportType.Tcp
@@ -138,7 +138,7 @@ class LinphoneManager private constructor(context: Context) {
 
     private fun resolveAddress(remote: String): Address? {
         val uri = if (remote.startsWith("sip:")) remote
-        else "sip:$remote@${core.defaultAccount?.params?.domain ?: Config.SIP_DOMAIN}"
+        else "sip:$remote@${core.defaultAccount?.params?.domain ?: Config.sipDomain}"
         return core.interpretUrl(uri) ?: Factory.instance().createAddress(uri)
     }
 

@@ -1,12 +1,11 @@
 package com.esibil.call.ui
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.esibil.call.data.UserProfile
+import com.esibil.call.data.Prefs
 import com.esibil.call.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -27,7 +26,7 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         bindData()
         binding.cardCallHistory.setOnClickListener {
-            startActivity(Intent(requireContext(), CallHistoryActivity::class.java))
+            startActivity(android.content.Intent(requireContext(), CallHistoryActivity::class.java))
         }
         binding.cardMyProfile.setOnClickListener {
             (activity as? HomeHost)?.switchTab(HomeTab.PROFILE)
@@ -35,10 +34,15 @@ class HomeFragment : Fragment() {
     }
 
     private fun bindData() {
-        binding.tvUserName.text = UserProfile.USER_NAME
-        binding.tvPrisonerHeadline.text = "Prisoner #${UserProfile.PRISONER_NUMBER}"
-        binding.tvPrisonerNumber.text = UserProfile.PRISONER_NUMBER
-        binding.tvLocation.text = UserProfile.JAIL_NAME
+        val prefs = Prefs(requireContext())
+        val name = prefs.displayName ?: prefs.phone ?: "User"
+        val prisonerNumber = prefs.sipId ?: "-"
+        val jail = prefs.jailName ?: "-"
+
+        binding.tvUserName.text = name
+        binding.tvPrisonerHeadline.text = "Prisoner #$prisonerNumber"
+        binding.tvPrisonerNumber.text = prisonerNumber
+        binding.tvLocation.text = jail
     }
 
     override fun onDestroyView() {

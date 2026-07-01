@@ -70,7 +70,10 @@ class HomeActivity : AppCompatActivity(), LinphoneManager.Listener, HomeHost {
         linphone.unregister()
         Prefs(this).clear()
         stopService(Intent(this, SipForegroundService::class.java))
-        startActivity(Intent(this, LoginActivity::class.java))
+        startActivity(
+            Intent(this, WelcomeActivity::class.java)
+                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+        )
         finish()
     }
 

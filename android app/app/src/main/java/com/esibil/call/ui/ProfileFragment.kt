@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.esibil.call.data.UserProfile
+import com.esibil.call.data.Prefs
 import com.esibil.call.databinding.FragmentProfileBinding
 
 class ProfileFragment : Fragment() {
@@ -30,17 +30,23 @@ class ProfileFragment : Fragment() {
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        if (_binding != null) bindData()
+    }
+
     private fun bindData() {
-        binding.tvProfileName.text = UserProfile.USER_NAME
-        binding.tvRelationship.text = UserProfile.RELATIONSHIP
-        binding.tvPhone.text = UserProfile.PHONE
-        binding.tvEmail.text = UserProfile.EMAIL
-        binding.tvAddress.text = UserProfile.ADDRESS
-        binding.tvInmateName.text = UserProfile.INMATE_NAME
-        binding.tvInmateId.text = UserProfile.INMATE_ID
-        binding.tvJailName.text = UserProfile.JAIL_NAME
-        binding.tvMemberSince.text = UserProfile.MEMBER_SINCE
-        binding.tvAccountType.text = UserProfile.ACCOUNT_TYPE
+        val prefs = Prefs(requireContext())
+        val displayName = prefs.displayName ?: prefs.phone ?: "User"
+        val phone = prefs.phone ?: "-"
+        val jail = prefs.jailName ?: "-"
+        val sipId = prefs.sipId ?: "-"
+
+        binding.tvProfileName.text = displayName
+        binding.tvPhone.text = phone
+        binding.tvInmateName.text = displayName
+        binding.tvInmateId.text = sipId
+        binding.tvJailName.text = jail
     }
 
     override fun onDestroyView() {

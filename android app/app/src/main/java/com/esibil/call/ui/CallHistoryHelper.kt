@@ -2,7 +2,7 @@ package com.esibil.call.ui
 
 import android.content.Context
 import com.esibil.call.core.LinphoneManager
-import com.esibil.call.data.UserProfile
+import com.esibil.call.data.Prefs
 import org.linphone.core.CallLog
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -18,6 +18,10 @@ object CallHistoryHelper {
         val dateFmt = SimpleDateFormat("MMM d, yyyy", Locale.getDefault())
         val timeFmt = SimpleDateFormat("h:mm a", Locale.getDefault())
 
+        val prefs = Prefs(context)
+        val inmateId = prefs.sipId ?: "-"
+        val jail = prefs.jailName ?: "-"
+
         return logs
             .sortedByDescending { toMillis(it.startDate) }
             .map { log ->
@@ -30,8 +34,8 @@ object CallHistoryHelper {
 
                 CallRecord(
                     name = remote,
-                    prisonerId = UserProfile.INMATE_ID,
-                    location = UserProfile.JAIL_NAME,
+                    prisonerId = inmateId,
+                    location = jail,
                     date = dateFmt.format(date),
                     time = timeFmt.format(date),
                     duration = formatDuration(log.duration),

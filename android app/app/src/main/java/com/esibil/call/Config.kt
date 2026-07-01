@@ -1,43 +1,47 @@
 package com.esibil.call
 
 /**
- * Central configuration.
- *
- * ┌──────────────────────────────────────────────────────────────────────┐
- * │  EDIT THESE VALUES to point the app at your own SIP / eSIBiL server.   │
- * └──────────────────────────────────────────────────────────────────────┘
- *
- * Everything below is a PLACEHOLDER. Replace with your real server details.
+ * Central configuration. SIP domain/proxy are updated at runtime when the
+ * user picks a jail from the sites API ([applyJailServer]).
  */
 object Config {
 
-    // ---- SIP / eSIBiL calling server ------------------------------------
-    // The SIP domain (realm) used in SIP addresses:  sip:<id>@<SIP_DOMAIN>
-    const val SIP_DOMAIN = "110.39.151.34"
+    private const val DEFAULT_IP = "110.39.151.34"
+    private const val SIP_PORT = 5066
 
-    // The SIP proxy / registrar. Usually the same host as the domain, but
-    // can be an IP:port if your Asterisk / eSIBiL server is reached directly.
-    // Example: "sip:sip.example.com:5060"  or  "sip:41.222.333.44:5060"
-    const val SIP_PROXY = "sip:110.39.151.34:5066"
+    /** SIP realm: sip:&lt;id&gt;@&lt;sipDomain&gt; */
+    var sipDomain: String = DEFAULT_IP
+        private set
 
-    // Transport used to reach the server: Udp, Tcp or Tls (Tls recommended
-    // for production). Must match how your server is configured.
+    /** Registrar / proxy address passed to Linphone. */
+    var sipProxy: String = "sip:$DEFAULT_IP:$SIP_PORT"
+        private set
+
+    /** Fixed SIP password for all prisoner registrations. */
+    const val SIP_PASSWORD = "ppf@gcs123"
+
+    /** Jails / sites listing API. */
+    const val JAILS_API_URL =
+        "https://saddlebrown-chinchilla-896456.hostingersite.com/index.php"
+    const val JAILS_API_TOKEN = "GCS\$PPF@9!"
+
     val SIP_TRANSPORT = Transport.Udp
 
-    // ---- Registration / provisioning backend ----------------------------
-    // Your HTTP endpoint that validates a phone number and returns the SIP
-    // credentials the server has assigned to that user.
-    //
-    // Expected request  (POST, application/json):
-    //     { "phone": "+923001234567" }
-    //
-    // Expected response (200, application/json):
-    //     { "sipId": "923001234567", "password": "s3cr3t", "domain": "sip.example.com" }
-    //
-    // Set to a real URL to enable live provisioning. While it still contains
-    // "CHANGE_ME", the app falls back to DEV mode (see RegistrationApi) so you
-    // can test calling without a backend.
     const val PROVISIONING_URL = "https://CHANGE_ME.example.com/sip/register"
+
+    fun applyJailServer(ip: String) {
+        sipDomain = ip
+        sipProxy = "sip:$ip:$SIP_PORT"
+    }
+
+    /** Restore runtime SIP settings from saved prefs on cold start. */
+    fun restoreFromSavedDomain(domain: String?) {
+        if (!domain.isNullOrBlank()) applyJailServer(domain)
+    }
+
+    // Legacy aliases used by older call sites
+    val SIP_DOMAIN: String get() = sipDomain
+    val SIP_PROXY: String get() = sipProxy
 
     enum class Transport { Udp, Tcp, Tls }
 }
