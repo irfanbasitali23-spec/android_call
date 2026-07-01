@@ -7,6 +7,7 @@ import android.app.PendingIntent
 import android.app.Service
 import android.content.Context
 import android.content.Intent
+import android.content.pm.ServiceInfo
 import android.os.Build
 import android.os.IBinder
 import android.util.Log
@@ -51,7 +52,22 @@ class SipForegroundService : Service(), LinphoneManager.Listener {
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         ensureChannel()
-        startForeground(NOTIF_ID_RUNNING, buildOngoingNotification())
+
+        val notification = buildOngoingNotification()
+        // On Android 14+ the foreground service type must be declared both in
+        // the manifest and at runtime via ServiceInfo — otherwise startForeground
+        // throws SecurityException. We use dataSync (not phoneCall) because this
+        // is a SIP/VoIP client, not the system dialer.
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            startForeground(
+                NOTIF_ID_RUNNING,
+                notification,
+                ServiceInfo.FOREGROUND_SERVICE_TYPE_DATA_SYNC
+            )
+        } else {
+            @Suppress("DEPRECATION")
+            startForeground(NOTIF_ID_RUNNING, notification)
+        }
 
         // Re-register with the saved credentials so we're reachable for calls
         // even after a process kill or device reboot.

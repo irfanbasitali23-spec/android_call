@@ -21,6 +21,7 @@
     <!-- Keep the call service alive -->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_PHONE_CALL" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <!-- Re-launch the SIP service after a device reboot so we keep receiving
@@ -77,11 +78,14 @@
             android:launchMode="singleTop" />
 
         <!-- Background SIP service: keeps registration alive and shows the
-             incoming-call notification even when the UI is closed. -->
+             incoming-call notification even when the UI is closed. We use the
+             dataSync FGS type because this is a SIP/VoIP client — not the
+             system dialer — so it does not qualify for the phoneCall type,
+             which on Android 14+ requires MANAGE_OWN_CALLS or the DIALER role. -->
         <service
             android:name=".service.SipForegroundService"
             android:exported="false"
-            android:foregroundServiceType="phoneCall" />
+            android:foregroundServiceType="dataSync" />
 
         <!-- Re-launch the SIP service after device boot so the user stays
              reachable for calls without having to open the app first. -->
