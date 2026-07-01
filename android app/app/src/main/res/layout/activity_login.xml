@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_login_screen"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingHorizontal="26dp"
+        android:paddingTop="44dp"
+        android:paddingBottom="32dp">
+
+        <!-- Logo tile -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            app:cardCornerRadius="26dp"
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="@color/input_bg">
+
+            <View
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_logo_tile" />
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:contentDescription="@string/dept_name_ur"
+                android:src="@drawable/ic_id_broadcast" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- Department name (Urdu) -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/dept_name_ur"
+            android:textColor="@color/login_heading"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textDirection="rtl" />
+
+        <!-- Login title (English) -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:text="@string/login_title_en"
+            android:textColor="@color/login_heading"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <!-- Login title (Urdu) -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/login_title_ur"
+            android:textColor="@color/login_teal"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <!-- Subtitle (Urdu) -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/login_subtitle_ur"
+            android:textColor="@color/login_urdu_sub"
+            android:textSize="15sp"
+            android:textDirection="rtl" />
+
+        <!-- CNIC label row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/cnic_label_en"
+                android:textColor="@color/login_label"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="@string/cnic_label_ur"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/login_teal"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- CNIC field -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_input_field">
+
+            <EditText
+                android:id="@+id/cnicInput"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:hint="@string/cnic_hint"
+                android:textColorHint="@color/input_hint"
+                android:textColor="@color/login_heading"
+                android:textSize="15sp"
+                android:inputType="number"
+                android:maxLength="13"
+                android:paddingHorizontal="18dp"
+                android:importantForAutofill="no" />
+        </FrameLayout>
+
+        <!-- Password label row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/password_label_en"
+                android:textColor="@color/login_label"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="@string/password_label_ur"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/login_teal"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Password field -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_input_field">
+
+            <EditText
+                android:id="@+id/passwordInput"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:hint="@string/password_hint"
+                android:textColorHint="@color/input_hint"
+                android:textColor="@color/login_heading"
+                android:textSize="15sp"
+                android:inputType="textPassword"
+                android:paddingStart="18dp"
+                android:paddingEnd="52dp"
+                android:importantForAutofill="no" />
+
+            <ImageButton
+                android:id="@+id/togglePassword"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_gravity="center_vertical|end"
+                android:layout_marginEnd="8dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/password_label_en"
+                android:src="@drawable/ic_eye" />
+        </FrameLayout>
+
+        <!-- Forgot password -->
+        <TextView
+            android:id="@+id/forgotPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="12dp"
+            android:padding="4dp"
+            android:text="@string/forgot_password"
+            android:textColor="@color/login_teal"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <!-- Login button -->
+        <LinearLayout
+            android:id="@+id/loginButton"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:layout_marginTop="24dp"
+            android:orientation="vertical"
+            android:text="Login / لگ ان"
+            android:gravity="center"
+            android:background="@drawable/bg_btn_login"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/login_button_en"
+                android:textColor="@android:color/white"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/login_button_ur"
+                android:textColor="@android:color/white"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <!-- Sign Up button -->
+        <LinearLayout
+            android:id="@+id/signupButton"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:layout_marginTop="14dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/bg_btn_signup"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/signup_button_en"
+                android:textColor="@android:color/white"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/signup_button_ur"
+                android:textColor="@android:color/white"
+                android:textSize="15sp" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dont_have_account_ur"
+            android:textColor="@android:color/background_dark"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginTop="24dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dont_have_account_en"
+            android:textColor="@android:color/background_dark"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginTop="4dp" />
+    </LinearLayout>
+</ScrollView>

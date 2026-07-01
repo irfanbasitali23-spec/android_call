@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_card_rounded"
+    android:elevation="2dp"
+    android:padding="16dp"
+    android:layout_marginBottom="16dp">
+
+    <!-- Top row: icon + name/prisonerId/location + status badge -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="top">
+
+        <FrameLayout
+            android:id="@+id/circleIconBg"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="@drawable/bg_circle_light_green">
+
+            <ImageView
+                android:id="@+id/ivVideoIcon"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_video_camera" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="8dp">
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="John Doe"
+                android:textColor="@color/navy_dark"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvPrisonerId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Prisoner ID: INM-2024-001"
+                android:textColor="@color/text_gray"
+                android:textSize="13sp"
+                android:layout_marginTop="2dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="4dp">
+
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:src="@drawable/ic_location_gray" />
+
+                <TextView
+                    android:id="@+id/tvLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Central Jail Lahore"
+                    android:textColor="@color/text_gray"
+                    android:textSize="13sp"
+                    android:layout_marginStart="4dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/badgeContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@drawable/bg_badge_completed"
+            android:paddingStart="10dp"
+            android:paddingEnd="12dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp">
+
+            <ImageView
+                android:id="@+id/ivBadgeIcon"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:src="@drawable/ic_check_small_green" />
+
+            <TextView
+                android:id="@+id/tvBadgeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Completed"
+                android:textColor="@color/badge_completed_text"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:layout_marginStart="5dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Divider -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider_gray"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Date / Time row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/ic_calendar" />
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mar 18, 2024"
+            android:textColor="@color/text_gray"
+            android:textSize="13sp"
+            android:layout_marginStart="6dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="•"
+            android:textColor="@color/text_light_gray"
+            android:textSize="13sp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp" />
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/ic_clock_gray" />
+
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2:30 PM"
+            android:textColor="@color/text_gray"
+            android:textSize="13sp"
+            android:layout_marginStart="6dp" />
+    </LinearLayout>
+
+    <!-- Duration row (visible only for completed calls) -->
+    <LinearLayout
+        android:id="@+id/layoutDuration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="8dp">
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/ic_clock_green" />
+
+        <TextView
+            android:id="@+id/tvDuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Duration: 28:45"
+            android:textColor="@color/icon_green"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:layout_marginStart="6dp" />
+    </LinearLayout>
+
+    <!-- Banner (visible only for missed/rejected calls) -->
+    <LinearLayout
+        android:id="@+id/layoutBanner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@drawable/bg_banner_missed"
+        android:padding="12dp"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:id="@+id/ivBannerIcon"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/ic_info_orange" />
+
+        <TextView
+            android:id="@+id/tvBannerText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="You missed this scheduled call"
+            android:textColor="@color/banner_missed_text"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:layout_marginStart="8dp" />
+    </LinearLayout>
+
+</LinearLayout>

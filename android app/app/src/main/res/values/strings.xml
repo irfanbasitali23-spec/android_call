@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">eSIBiL Call</string>
+
+    <!-- Login -->
+    <string name="dept_name_ur">محکمہ جیل خانہ جات</string>
+    <string name="login_title_en">Login</string>
+    <string name="login_title_ur">لاگ اِن</string>
+    <string name="login_subtitle_ur">براہِ مہربانی اپنی تفصیلات درج کریں</string>
+    <string name="cnic_label_en">CNIC Number</string>
+    <string name="cnic_label_ur">شناختی کارڈ نمبر</string>
+    <string name="cnic_hint">Enter your CNIC number</string>
+    <string name="password_label_en">Password</string>
+    <string name="password_label_ur">پاس ورڈ</string>
+    <string name="password_hint">Enter your password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="login_button_en">Login</string>
+    <string name="login_button_ur">لاگ اِن</string>
+    <string name="signup_button_en">Sign Up</string>
+    <string name="signup_button_ur">رجسٹر کریں</string>
+    <string name="err_cnic_required">Please enter your CNIC number</string>
+    <string name="err_cnic_invalid">CNIC must be 13 digits</string>
+    <string name="err_password_required">Please enter your password</string>
+    <string name="dont_have_account_ur">براہ مہربانی پہلے اپنے آپ کو رجسٹر کریں</string>
+    <string name="dont_have_account_en">Don\'t have an account? Please sign up first</string>
+
+    <!-- Register -->
+    <string name="register_subtitle">Register your phone number to get your SIP id</string>
+    <string name="phone_hint">Phone number (e.g. +923001234567)</string>
+    <string name="register_button">Register</string>
+    <string name="server_label">Calling server: %1$s</string>
+    <string name="enter_phone">Please enter your phone number</string>
+    <string name="validating">Validating number…</string>
+    <string name="registering">Registering to SIP server…</string>
+    <string name="registration_failed">Registration failed</string>
+    <string name="registered_as">Registered as %1$s</string>
+
+    <!-- Dialer -->
+    <string name="dialer_title">Dialer</string>
+    <string name="remote_hint">SIP id or number to call</string>
+    <string name="audio_call">Audio</string>
+    <string name="video_call">Video</string>
+    <string name="enter_sip_id">Enter a SIP id to call</string>
+    <string name="call_failed">Could not start the call</string>
+    <string name="logout">Log out</string>
+
+    <!-- Call -->
+    <string name="incoming_call">Incoming call…</string>
+    <string name="calling">Calling…</string>
+    <string name="ringing">Ringing…</string>
+    <string name="connected">Connected</string>
+    <string name="call_ended">Call ended</string>
+
+    <!-- Background call service / incoming-call notification -->
+    <string name="sip_channel_name">SIP calling</string>
+    <string name="sip_channel_desc">Keeps the phone reachable for incoming SIP calls and shows the in-call notification.</string>
+    <string name="sip_service_title">eSIBiL Call is active</string>
+    <string name="sip_service_text">Listening for incoming calls</string>
+    <string name="incoming_notification_title">Incoming video call</string>
+    <string name="incoming_notification_text">Tap to answer</string>
+    <string name="action_answer">Answer</string>
+    <string name="action_decline">Decline</string>
+    <string name="action_open">Open</string>
+</resources>

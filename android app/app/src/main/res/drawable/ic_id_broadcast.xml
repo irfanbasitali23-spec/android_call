@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ID card with person + broadcast arcs, white on transparent -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48"
+    android:tint="@android:color/white">
+
+    <!-- Card outline -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="2.2"
+        android:strokeLineJoin="round"
+        android:pathData="M13,14 h22 a3,3 0 0 1 3,3 v14 a3,3 0 0 1 -3,3 h-22 a3,3 0 0 1 -3,-3 v-14 a3,3 0 0 1 3,-3 z" />
+
+    <!-- Person head -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M20,22 m-3,0 a3,3 0 1 0 6,0 a3,3 0 1 0 -6,0" />
+
+    <!-- Person shoulders -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M15,30 c0,-3 2.4,-5 5,-5 c2.6,0 5,2 5,5 z" />
+
+    <!-- Text lines on card -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M28,23 h6 v2 h-6 z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M28,27 h6 v2 h-6 z" />
+
+    <!-- Left broadcast arcs -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:pathData="M8,20 a6,6 0 0 0 0,8" />
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:pathData="M5,17 a10,10 0 0 0 0,14" />
+
+    <!-- Right broadcast arcs -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:pathData="M40,20 a6,6 0 0 1 0,8" />
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:pathData="M43,17 a10,10 0 0 1 0,14" />
+</vector>

@@ -1,0 +1,7 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="20dp" android:height="20dp" android:viewportWidth="24" android:viewportHeight="24">
+    <path android:fillColor="@color/reminder_text"
+        android:pathData="M12,2 L1,21 L23,21 Z M12,7 L12,14 M12,16.5 a1,1 0,1 0,0.01 0"/>
+    <path android:fillColor="@android:color/transparent" android:strokeColor="@color/reminder_text" android:strokeWidth="1.5"
+        android:pathData="M12,9 L12,14"/>
+</vector>

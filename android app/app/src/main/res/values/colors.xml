@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#00695C</color>
+    <color name="primary_dark">#004D40</color>
+    <color name="accent">#26A69A</color>
+    <color name="bg">#FFFFFF</color>
+    <color name="call_bg">#101418</color>
+    <color name="text_muted">#7A8691</color>
+    <color name="danger">#E53935</color>
+    <color name="success">#43A047</color>
+    <color name="button_bg">#33FFFFFF</color>
+
+    <!-- Login screen -->
+    <color name="login_bg">#F1F6F3</color>
+    <color name="login_bg_pattern">#E7EFEA</color>
+    <color name="login_heading">#12324B</color>
+    <color name="login_teal">#0E7A6B</color>
+    <color name="login_urdu_sub">#5B6B72</color>
+    <color name="login_label">#12324B</color>
+    <color name="input_bg">#FFFFFF</color>
+    <color name="input_stroke">#DDE6E1</color>
+    <color name="input_hint">#9AA7A0</color>
+    <color name="login_grad_start">#1E9B63</color>
+    <color name="login_grad_end">#0C6B4C</color>
+    <color name="signup_grad_start">#123B4E</color>
+    <color name="signup_grad_end">#1E6B5C</color>
+    <color name="icon_grad_start">#1A8F73</color>
+    <color name="icon_grad_end">#0C5E4F</color>
+    <color name="header_start">#1B3A3A</color>
+    <color name="header_end">#2E6B52</color>
+
+    <color name="navy_dark">#152A4A</color>
+    <color name="text_gray">#6B7280</color>
+    <color name="text_light_gray">#9CA3AF</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="card_border_green">#2E8B57</color>
+
+    <color name="icon_bg_light_green">#DCEEE4</color>
+    <color name="icon_green">#2E8B57</color>
+
+    <color name="icon_bg_light_blue">#E7ECF3</color>
+    <color name="icon_navy">#1B3A5C</color>
+
+    <color name="icon_bg_light_orange">#FBE6D2</color>
+    <color name="icon_orange">#E38B29</color>
+
+    <color name="circle_dark_green">#2E6B52</color>
+    <color name="circle_orange">#E38B29</color>
+
+    <color name="reminder_bg">#FDF3D6</color>
+    <color name="reminder_border">#F0DFA0</color>
+    <color name="reminder_text">#B4770F</color>
+
+    <color name="badge_bg">#33FFFFFF</color>
+
+    <color name="bottom_nav_bg">#FFFFFF</color>
+    <color name="bottom_nav_active">#2E6B52</color>
+    <color name="bottom_nav_inactive">#9CA3AF</color>
+
+    <!-- Call History screen -->
+    <color name="icon_red">#D64545</color>
+
+    <color name="badge_completed_bg">#DCEEE4</color>
+    <color name="badge_completed_text">#2E8B57</color>
+
+    <color name="badge_missed_bg">#FBE6D2</color>
+    <color name="badge_missed_text">#C97A1D</color>
+
+    <color name="badge_rejected_bg">#FADBDB</color>
+    <color name="badge_rejected_text">#D64545</color>
+
+    <color name="banner_missed_bg">#FDEEDB</color>
+    <color name="banner_missed_border">#F5D9B0</color>
+    <color name="banner_missed_text">#C97A1D</color>
+
+    <color name="banner_rejected_bg">#FCE4E4</color>
+    <color name="banner_rejected_border">#F3C6C6</color>
+    <color name="banner_rejected_text">#D64545</color>
+
+    <color name="circle_light_orange">#FBE6D2</color>
+    <color name="circle_light_red">#FADBDB</color>
+
+    <color name="divider_gray">#EDEFF2</color>
+
+    <!-- Notification icon tint -->
+    <color name="notification_icon_color">#2E8B57</color>
+</resources>
