@@ -78,4 +78,25 @@
     <string name="profile_logout">Logout</string>
     <string name="profile_footer">Punjab Prison Foundation Video Call App v1.0.0</string>
     <string name="history_empty">No call history yet</string>
+
+    <!-- Welcome / onboarding -->
+    <string name="welcome_title">Welcome to Video Call App</string>
+    <string name="welcome_dept_ur">محکمہ داخلہ، حکومت پنجاب</string>
+    <string name="welcome_urdu">خوش آمدید</string>
+    <string name="welcome_instruction_en">To start a video call, please add prisoner details first.</string>
+    <string name="welcome_instruction_ur">ویڈیو کال شروع کرنے کے لیے، پہلے قیدی کی تفصیلات شامل کریں</string>
+    <string name="welcome_add_prisoner_en">Add Prisoner Information</string>
+    <string name="welcome_add_prisoner_ur">قیدی کی معلومات شامل کریں</string>
+
+    <!-- Before continue -->
+    <string name="before_continue_title">Before You Continue</string>
+    <string name="before_continue_title_ur">جاری رکھنے سے پہلے</string>
+    <string name="important_notice">Important Notice</string>
+    <string name="important_notice_ur">اہم اطلاع</string>
+    <string name="instructions_title">Instructions</string>
+    <string name="instructions_title_ur">ہدایات</string>
+    <string name="instructions_body_en">Video calls will only be allowed if your registered mobile number already exists in the prisoner\'s profile. If your number is not registered in the prisoner\'s profile, the call will not be permitted.</string>
+    <string name="instructions_body_ur">ویڈیو کالز صرف اس صورت میں کی اجازت دی جائے گی جب آپ کا رجسٹرڈ موبائل نمبر قیدی کے پروفائل میں پہلے سے موجود ہو۔ اگر آپ کا نمبر قیدی کے پروفائل میں رجسٹرڈ نہیں ہے تو کال کی اجازت نہیں دی جائے گی۔</string>
+    <string name="continue_button">Continue / جاری رکھیں</string>
+    <string name="read_carefully">Please read carefully before proceeding</string>
 </resources>

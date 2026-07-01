@@ -43,7 +43,7 @@
         android:theme="@style/Theme.ESIBiLCall">
 
         <activity
-            android:name=".ui.LoginActivity"
+            android:name=".ui.WelcomeActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -51,6 +51,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".ui.BeforeContinueActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.LoginActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".ui.RegisterActivity"
