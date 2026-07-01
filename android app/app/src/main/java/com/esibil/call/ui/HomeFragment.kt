@@ -1,5 +1,6 @@
 package com.esibil.call.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -26,7 +27,7 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         bindData()
         binding.cardCallHistory.setOnClickListener {
-            (activity as? HomeHost)?.switchTab(HomeTab.HISTORY)
+            startActivity(Intent(requireContext(), CallHistoryActivity::class.java))
         }
         binding.cardMyProfile.setOnClickListener {
             (activity as? HomeHost)?.switchTab(HomeTab.PROFILE)

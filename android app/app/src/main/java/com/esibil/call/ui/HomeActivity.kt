@@ -16,8 +16,8 @@ import org.linphone.core.Call
 import org.linphone.core.RegistrationState
 
 /**
- * Main shell after login. Hosts three bottom-nav tabs — Home, History and
- * Profile — and listens for incoming SIP calls.
+ * Main shell after login. Hosts Home and Profile bottom-nav tabs and listens
+ * for incoming SIP calls.
  */
 class HomeActivity : AppCompatActivity(), LinphoneManager.Listener, HomeHost {
 
@@ -41,7 +41,6 @@ class HomeActivity : AppCompatActivity(), LinphoneManager.Listener, HomeHost {
         }
 
         binding.navHome.setOnClickListener { switchTab(HomeTab.HOME) }
-        binding.navHistory.setOnClickListener { switchTab(HomeTab.HISTORY) }
         binding.navProfile.setOnClickListener { switchTab(HomeTab.PROFILE) }
     }
 
@@ -98,13 +97,11 @@ class HomeActivity : AppCompatActivity(), LinphoneManager.Listener, HomeHost {
 
     private fun fragmentFor(tab: HomeTab): Fragment = when (tab) {
         HomeTab.HOME -> HomeFragment()
-        HomeTab.HISTORY -> HistoryFragment()
         HomeTab.PROFILE -> ProfileFragment()
     }
 
     private fun tagFor(tab: HomeTab): String = when (tab) {
         HomeTab.HOME -> TAG_HOME
-        HomeTab.HISTORY -> TAG_HISTORY
         HomeTab.PROFILE -> TAG_PROFILE
     }
 
@@ -113,15 +110,9 @@ class HomeActivity : AppCompatActivity(), LinphoneManager.Listener, HomeHost {
         val inactive = ContextCompat.getColor(this, R.color.bottom_nav_inactive)
 
         styleNav(binding.navHomeIcon, binding.navHomeLabel, tab == HomeTab.HOME, active, inactive)
-        styleNav(binding.navHistoryIcon, binding.navHistoryLabel, tab == HomeTab.HISTORY, active, inactive)
         styleNav(binding.navProfileIcon, binding.navProfileLabel, tab == HomeTab.PROFILE, active, inactive)
 
-        binding.navHomeIcon.setImageResource(
-            if (tab == HomeTab.HOME) R.drawable.ic_home_filled else R.drawable.ic_home_filled
-        )
-        binding.navHistoryIcon.setImageResource(
-            if (tab == HomeTab.HISTORY) R.drawable.ic_history else R.drawable.ic_history_outline
-        )
+        binding.navHomeIcon.setImageResource(R.drawable.ic_home_filled)
         binding.navProfileIcon.setImageResource(
             if (tab == HomeTab.PROFILE) R.drawable.ic_person_green else R.drawable.ic_person_outline_gray
         )
@@ -157,7 +148,6 @@ class HomeActivity : AppCompatActivity(), LinphoneManager.Listener, HomeHost {
 
     companion object {
         private const val TAG_HOME = "tab_home"
-        private const val TAG_HISTORY = "tab_history"
         private const val TAG_PROFILE = "tab_profile"
         private const val KEY_TAB = "current_tab"
     }

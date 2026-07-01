@@ -57,32 +57,6 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/navHistory"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:clickable="true"
-            android:focusable="true">
-
-            <ImageView
-                android:id="@+id/navHistoryIcon"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_history_outline" />
-
-            <TextView
-                android:id="@+id/navHistoryLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tab_history"
-                android:textColor="@color/bottom_nav_inactive"
-                android:textSize="12sp"
-                android:layout_marginTop="4dp" />
-        </LinearLayout>
-
-        <LinearLayout
             android:id="@+id/navProfile"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
