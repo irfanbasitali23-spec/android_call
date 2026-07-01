@@ -49,6 +49,7 @@ dependencies {
     implementation("com.google.android.material:material:1.12.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.4")
+    implementation("androidx.fragment:fragment-ktx:1.8.2")
 
     // Networking for phone-number registration / SIP provisioning
     implementation("com.squareup.okhttp3:okhttp:4.12.0")

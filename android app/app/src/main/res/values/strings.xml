@@ -61,4 +61,21 @@
     <string name="action_answer">Answer</string>
     <string name="action_decline">Decline</string>
     <string name="action_open">Open</string>
+
+    <!-- Bottom tabs -->
+    <string name="tab_home">Home</string>
+    <string name="tab_history">History</string>
+    <string name="tab_profile">Profile</string>
+    <string name="profile_title_ur">پروفائل</string>
+    <string name="profile_relationship">Spouse to Inmate</string>
+    <string name="profile_approved">Approved</string>
+    <string name="profile_connected_inmate">Connected Inmate</string>
+    <string name="profile_account_details">Account Details</string>
+    <string name="profile_member_since">Member Since</string>
+    <string name="profile_account_type">Account Type</string>
+    <string name="profile_verification_status">Verification Status</string>
+    <string name="profile_verified">Verified</string>
+    <string name="profile_logout">Logout</string>
+    <string name="profile_footer">Punjab Prison Foundation Video Call App v1.0.0</string>
+    <string name="history_empty">No call history yet</string>
 </resources>
