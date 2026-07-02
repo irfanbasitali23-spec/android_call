@@ -1,0 +1,17 @@
+# This file tracks properties of this Flutter project.
+# Used by Flutter tool; do not check into VCS if it contains machine-specific paths.
+version:
+  revision: "stable"
+  channel: "stable"
+
+project_type: app
+
+migration:
+  platforms:
+    - platform: root
+      create_revision: stable
+      base_revision: stable
+  unmanaged_files:
+    - lib/main.dart
+    - ios/Runner.xcodeproj/project.pbxproj
+    - ios/Runner/Info.plist
